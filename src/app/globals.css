@@ -6,4 +6,10 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
+  background-color: lightpink;
 }
+.active {
+  @apply bg-black/30;
+}
+
