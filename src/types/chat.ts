@@ -15,7 +15,7 @@ export interface FullChat {
     username: string;
     profileImage: string;
     isOnline: boolean;
-    lastMessageDate: Date;
+    lastSeen: Date;
     unreadCount: number;
     chatHistory: {
         message: string;

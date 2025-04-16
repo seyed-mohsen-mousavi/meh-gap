@@ -5,8 +5,9 @@ import Ripple from "material-ripple-effects";
 import { useState } from "react";
 import { chats } from "@/data/chat";
 import { useParams } from "next/navigation";
+import { ArrowLeftStartOnRectangleIcon, EllipsisHorizontalIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
-function ChatSide() {
+function SideBar() {
   const { username } = useParams<{ username: string }>();
   const decodeUserName = decodeURIComponent(username).replace("@", "");
 
@@ -15,7 +16,38 @@ function ChatSide() {
   return (
     <div className="flex size-full flex-col">
       <div className="p-6">
-        <h2 className="text-2xl font-semibold">چت‌ها</h2>
+        <div className="flex w-full items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Image
+              src={`https://picsum.photos/50`}
+              alt={"user"}
+              width={50}
+              height={50}
+              className="rounded-full object-cover"
+            />
+            <h2 className="text-2xl font-semibold">چت‌ها</h2>
+          </div>
+          <div className="space-x-1 flex items-center">
+            <button
+              type="button"
+              className="cursor-pointer rounded-full bg-black/30 p-1.5 transition-colors ease-linear hover:bg-black/40"
+            >
+              <ArrowLeftStartOnRectangleIcon className="size-4" />
+            </button>
+            <button
+              type="button"
+              className="cursor-pointer rounded-full bg-black/30 p-1.5 transition-colors ease-linear hover:bg-black/40"
+            >
+              <PencilSquareIcon className="size-4" />
+            </button>
+            <button
+              type="button"
+              className="cursor-pointer rounded-full bg-black/30 p-1 transition-colors ease-linear hover:bg-black/40"
+            >
+              <EllipsisHorizontalIcon className="size-5" />
+            </button>
+          </div>
+        </div>
         <input
           type="search"
           name="chatSearch"
@@ -51,7 +83,7 @@ function ChatSide() {
                     className="rounded-full object-cover"
                   />
                   {chat.isOnline && (
-                    <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-black bg-green-500" />
+                    <span className="absolute right-0.5 bottom-0 h-3 w-3 rounded-full bg-green-400 shadow-xl shadow-green-400/50" />
                   )}
                 </div>
 
@@ -71,4 +103,4 @@ function ChatSide() {
   );
 }
 
-export default ChatSide;
+export default SideBar;

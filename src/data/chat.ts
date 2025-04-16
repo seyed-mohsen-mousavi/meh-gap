@@ -130,14 +130,14 @@ export const fullChat: FullChat[] = [
         username: "mohammad",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-15T10:30:00Z"),
+        lastSeen: new Date("2025-04-16T10:30:00Z"),
         unreadCount: 3,
         chatHistory: [
             { message: "سلام، خوبی؟", sender: "mohammad", date: new Date("2025-04-14T10:00:00Z") },
             { message: "بله، مرسی، تو چطوری؟", sender: "محمد", date: new Date("2025-04-14T10:05:00Z") },
         ],
-        chatType: "private", // نوع چت (خصوصی یا گروهی)
-        isPinned: false, // آیا چت پین شده است یا نه
+        chatType: "private", 
+        isPinned: false, 
     },
     {
         chatId: 2,
@@ -146,7 +146,7 @@ export const fullChat: FullChat[] = [
         username: "hoesien",
         profileImage: "https://picsum.photos/200",
         isOnline: true,
-        lastMessageDate: new Date("2025-04-15T11:00:00Z"),
+        lastSeen: new Date("2025-04-15T11:00:00Z"),
         unreadCount: 1,
         chatHistory: [
             { message: "سلام حسین!", sender: "hoesien", date: new Date("2025-04-15T10:50:00Z") },
@@ -162,7 +162,7 @@ export const fullChat: FullChat[] = [
         username: "reaze",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-14T17:45:00Z"),
+        lastSeen: new Date("2025-04-14T17:45:00Z"),
         unreadCount: 0,
         chatHistory: [
             { message: "سلام رضا!", sender: "reaze", date: new Date("2025-04-14T16:30:00Z") },
@@ -178,7 +178,7 @@ export const fullChat: FullChat[] = [
         username: "ali",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-14T19:30:00Z"),
+        lastSeen: new Date("2025-04-14T19:30:00Z"),
         unreadCount: 5,
         chatHistory: [
             { message: "سلام علی جان", sender: "ali", date: new Date("2025-04-14T19:00:00Z") },
@@ -194,7 +194,7 @@ export const fullChat: FullChat[] = [
         username: "mohammad_reaza",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-13T08:15:00Z"),
+        lastSeen: new Date("2025-04-13T08:15:00Z"),
         unreadCount: 0,
         chatHistory: [],
         chatType: "private",
@@ -207,7 +207,7 @@ export const fullChat: FullChat[] = [
         username: "amir",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-12T09:00:00Z"),
+        lastSeen: new Date("2025-04-12T09:00:00Z"),
         unreadCount: 2,
         chatHistory: [
             { message: "سلام امیر!", sender: "amir", date: new Date("2025-04-12T08:30:00Z") },
@@ -223,7 +223,7 @@ export const fullChat: FullChat[] = [
         username: "mohsen",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-11T14:30:00Z"),
+        lastSeen: new Date("2025-04-11T14:30:00Z"),
         unreadCount: 0,
         chatHistory: [],
         chatType: "private",
@@ -236,7 +236,7 @@ export const fullChat: FullChat[] = [
         username: "nazanin",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-10T16:45:00Z"),
+        lastSeen: new Date("2025-04-10T16:45:00Z"),
         unreadCount: 3,
         chatHistory: [
             { message: "سلام نازنین!", sender: "nazanin", date: new Date("2025-04-10T16:00:00Z") },
@@ -252,7 +252,7 @@ export const fullChat: FullChat[] = [
         username: "zeinab",
         profileImage: "https://picsum.photos/200",
         isOnline: true,
-        lastMessageDate: new Date("2025-04-15T13:00:00Z"),
+        lastSeen: new Date("2025-04-15T13:00:00Z"),
         unreadCount: 0,
         chatHistory: [
             { message: "سلام، خوبی؟", sender: "zeinab", date: new Date("2025-04-15T12:50:00Z") },
@@ -267,7 +267,7 @@ export const fullChat: FullChat[] = [
         username: "farzad",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-14T20:00:00Z"),
+        lastSeen: new Date("2025-04-14T20:00:00Z"),
         unreadCount: 1,
         chatHistory: [
             { message: "سلام فرزاد!", sender: "farzad", date: new Date("2025-04-14T19:30:00Z") },
@@ -282,7 +282,7 @@ export const fullChat: FullChat[] = [
         username: "sanaaz",
         profileImage: "https://picsum.photos/200",
         isOnline: false,
-        lastMessageDate: new Date("2025-04-13T12:00:00Z"),
+        lastSeen: new Date("2025-04-13T12:00:00Z"),
         unreadCount: 4,
         chatHistory: [
             { message: "سلام ساناز!", sender: "sanaaz", date: new Date("2025-04-13T11:50:00Z") },
@@ -298,7 +298,7 @@ export const fullChat: FullChat[] = [
         username: "mehdi",
         profileImage: "https://picsum.photos/200",
         isOnline: true,
-        lastMessageDate: new Date("2025-04-15T14:30:00Z"),
+        lastSeen: new Date("2025-04-15T14:30:00Z"),
         unreadCount: 2,
         chatHistory: [
             { message: "سلام مهدی!", sender: "mehdi", date: new Date("2025-04-15T14:15:00Z") },

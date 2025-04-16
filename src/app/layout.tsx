@@ -1,7 +1,7 @@
-import Providers from "@/components/Providers";
+// import Providers from "@/components/Providers";
 import "./globals.css";
 import { Metadata } from "next";
-import ChatSide from "@/components/ChatSide";
+import SideBar from "@/components/SideBar";
 // ${geistSans.variable} ${geistMono.variable}
 export const metadata: Metadata = {
   title: "مه گپ",
@@ -21,16 +21,14 @@ export default async function RootLayout({
         className={`h-screen w-screen max-w-[1920px] py-20 text-white antialiased`}
       >
         <main className="z-[10] container mx-auto h-full overflow-hidden rounded-2xl bg-black/20 backdrop-blur-sm">
-          <Providers>
-            <div className="grid size-full grid-cols-4">
-              <div className="size-full h-full bg-black/20 overflow-auto ">
-                <ChatSide />
-              </div>
-              <section className="col-span-3 size-full border">
-                {children}
-              </section>
+          <div className="grid size-full grid-cols-4">
+            <div className="size-full h-full overflow-auto bg-black/20">
+              <SideBar />
             </div>
-          </Providers>
+            <section className="col-span-3 size-full border-r border-gray-300/50">
+              {children}
+            </section>
+          </div>
         </main>
       </body>
     </html>
