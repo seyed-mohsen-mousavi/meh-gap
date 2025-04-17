@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
-import i18n from "@emoji-mart/data/i18n/fa.json";
+// import data from "@emoji-mart/data";
+// import Picker from "@emoji-mart/react";
+// import i18n from "@emoji-mart/data/i18n/fa.json";
 import {
   FaceSmileIcon,
   MicrophoneIcon,
@@ -62,14 +62,14 @@ function Inputs() {
     setRecordingTime(0);
   };
 
-  const toggleEmojiPicker = () => {
-    setEmojiPickerVisible(!emojiPickerVisible);
-  };
+  // const toggleEmojiPicker = () => {
+  //   setEmojiPickerVisible(!emojiPickerVisible);
+  // };
 
-  const handleEmojiSelect = (emoji: any) => {
-    setMessage((prevMessage) => prevMessage + emoji.native);
-    setEmojiPickerVisible(false);
-  };
+  // const handleEmojiSelect = (emoji: any) => {
+  //   setMessage((prevMessage) => prevMessage + emoji.native);
+  //   setEmojiPickerVisible(false);
+  // };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -93,7 +93,7 @@ function Inputs() {
 
   return (
     <form onSubmit={handleSubmit} className="relative flex items-center">
-      {emojiPickerVisible && (
+      {/* {emojiPickerVisible && (
         <motion.div
           className="absolute bottom-16 left-0 z-10"
           initial={{ opacity: 0 }}
@@ -109,7 +109,7 @@ function Inputs() {
             onEmojiSelect={handleEmojiSelect}
           />
         </motion.div>
-      )}
+      )} */}
 
       <div className="mx-2 flex items-center overflow-hidden rounded-full">
         <button
@@ -175,7 +175,7 @@ function Inputs() {
 
         <motion.button
           type="button"
-          onClick={toggleEmojiPicker}
+          // onClick={toggleEmojiPicker}
           disabled={isRecording || !!mediaBlobUrl}
           className="group cursor-pointer rounded-full p-1 hover:bg-black/20 disabled:cursor-default disabled:opacity-80 disabled:hover:bg-transparent"
         >
