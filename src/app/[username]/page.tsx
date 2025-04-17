@@ -1,7 +1,7 @@
+import { MotionDiv } from "@/components/MotionDiv";
 import { fullChat } from "@/data/chat";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
 async function page({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params;
   const decodeUserName = decodeURIComponent(username).replace("@", "");
@@ -17,10 +17,14 @@ async function page({ params }: { params: Promise<{ username: string }> }) {
             className={`chat_con ${c.sender === decodeUserName ? "sender" : ""}`}
           >
             <img src="https://placehold.co/50" alt="Jese image" />
-            <div className="bubble">
+            <MotionDiv
+              initial={{ scale: 0, opacity: 0, x: c.sender === decodeUserName ? 100 : -100 }}
+              animate={{ scale: 1, opacity: 100, x: 0 }}
+              className="bubble transition-all ease-linear duration-75"
+            >
               <span>11:46</span>
               <p>{c.message}</p>
-            </div>
+            </MotionDiv>
           </div>
         );
       })}

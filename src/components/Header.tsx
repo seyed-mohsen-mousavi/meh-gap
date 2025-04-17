@@ -11,7 +11,7 @@ function Header({ chat }: { chat: FullChat }) {
   return (
     <header className="flex w-full items-center gap-3 border-b border-gray-300/50 p-5">
       <button
-        className="block sm:hidden cursor-pointer rounded-full p-3 transition-colors ease-linear hover:bg-black/10"
+        className="block cursor-pointer rounded-full p-3 transition-colors ease-linear hover:bg-black/10 sm:hidden"
         onClick={() => router.push("/")}
       >
         <ArrowRightIcon className="size-6 stroke-2 text-white/80" />
@@ -22,21 +22,23 @@ function Header({ chat }: { chat: FullChat }) {
           alt=""
           width={60}
           height={60}
-          className="rounded-full size-12 sm:size-16"
+          className="size-12 rounded-full sm:size-16"
         />
         {chat.isOnline && (
-          <span className="absolute right-0.5 bottom-0 sm:size-4 size-3  rounded-full bg-green-400 shadow-xl shadow-green-400/50" />
+          <span className="absolute right-0.5 bottom-0 size-3 rounded-full bg-green-400 shadow-xl shadow-green-400/50 sm:size-4" />
         )}
       </div>
       <div>
         <h2 className="text-lg sm:text-xl">{chat?.name}</h2>
         <p className="text-xs sm:text-sm">
-          {chat?.isOnline
-            ? "آنلاین"
-            : formatDistanceToNow(new Date(chat.lastSeen), {
-                addSuffix: true,
-                locale: faIR,
-              })}
+          {chat.member
+            ? `${chat.member} عضو`
+            : chat?.isOnline
+              ? "آنلاین"
+              : formatDistanceToNow(new Date(chat.lastSeen), {
+                  addSuffix: true,
+                  locale: faIR,
+                })}
         </p>
       </div>
     </header>

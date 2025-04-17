@@ -4,9 +4,12 @@ export interface Chat {
     name: string,
     username: string,
     profileImage: string,
-    isOnline: boolean,
+    isOnline?: boolean,
     lastMessageDate: Date,
-    unreadCount: number
+    unreadCount: number,
+    member?: number,
+    chatType: "private" | "group" | "channel";
+
 }
 export interface FullChat {
     chatId: number;
@@ -14,7 +17,7 @@ export interface FullChat {
     name: string;
     username: string;
     profileImage: string;
-    isOnline: boolean;
+    isOnline?: boolean;
     lastSeen: Date;
     unreadCount: number;
     chatHistory: {
@@ -22,6 +25,7 @@ export interface FullChat {
         sender: string;
         date: Date;
     }[];
-    chatType: "private" | "group";
+    member?: number;
+    chatType: "private" | "group" | "channel";
     isPinned: boolean;
 }

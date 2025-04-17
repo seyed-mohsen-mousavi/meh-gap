@@ -17,10 +17,12 @@ async function layout({
   return (
     <div className="flex size-full flex-col justify-between">
       <Header chat={chat} />
-      <section className="flex-1 overflow-auto ">{children}</section>
-      <section className="p-3">
-        <Inputs />
-      </section>
+      <section className="flex-1 overflow-auto">{children}</section>
+      {chat.chatType !== "channel" && (
+        <section className="p-3">
+          <Inputs />
+        </section>
+      )}
     </div>
   );
 }

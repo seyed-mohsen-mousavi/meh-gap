@@ -17,7 +17,7 @@ html {
   @apply flex flex-row-reverse items-start gap-2;
 }
 .chat_con .bubble {
-  @apply mt-5 flex max-w-1/2 items-end gap-3 rounded-xl rounded-bl-xl bg-black/50 px-4 py-2 leading-1.5;
+  @apply mt-5 flex sm:max-w-1/2 items-end gap-3 rounded-xl rounded-bl-xl bg-black/50 px-4 py-2 leading-1.5;
 }
 .chat_con img {
   @apply size-10 rounded-full;
