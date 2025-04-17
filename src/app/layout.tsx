@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import Chat from "@/components/Chat";
 // ${geistSans.variable} ${geistMono.variable}
 export const metadata: Metadata = {
@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     description:
       "یک پیام‌رسان سبک، سریع و امن با طراحی بلوری و رابط کاربری مینیمال است.",
   },
+};
+export const viewport: Viewport = {
+  minimumScale: 1.0,
+  width: "device-width",
+  initialScale: 1.0,
+  userScalable: false,
 };
 export default async function RootLayout({
   children,
