@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import Chat from "@/components/Chat";
 // ${geistSans.variable} ${geistMono.variable}
