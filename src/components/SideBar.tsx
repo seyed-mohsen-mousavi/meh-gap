@@ -27,7 +27,7 @@ function SideBar() {
             />
             <h2 className="text-2xl font-semibold">چت‌ها</h2>
           </div>
-          <div className="space-x-1 flex items-center">
+          <div className="space-x-1 hidden lg:flex items-center">
             <button
               type="button"
               className="cursor-pointer rounded-full bg-black/30 p-1.5 transition-colors ease-linear hover:bg-black/40"

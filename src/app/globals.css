@@ -23,10 +23,10 @@ html {
   @apply size-10 rounded-full;
 }
 .bubble span {
-  @apply text-xs font-normal text-gray-500 dark:text-gray-400;
+  @apply text-[10px] sm:text-xs font-normal text-gray-500 dark:text-gray-400;
 }
 .bubble p {
-  @apply py-1 text-sm font-normal text-gray-900 dark:text-white;
+  @apply py-1 text-sm sm:text-base font-normal text-gray-900 dark:text-white;
 }
 .sender {
   @apply flex-row;
