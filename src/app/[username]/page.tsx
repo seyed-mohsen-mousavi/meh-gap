@@ -1,6 +1,5 @@
 import { MotionDiv } from "@/components/MotionDiv";
 import { fullChat } from "@/data/chat";
-import Image from "next/image";
 import { Image as ImagePreview } from "primereact/image";
 import { notFound } from "next/navigation";
 import { FileIcon, defaultStyles } from "react-file-icon";
@@ -89,11 +88,16 @@ async function page({ params }: { params: Promise<{ username: string }> }) {
 
                     <div className="file mt-2 flex items-center gap-5 rounded-xl px-4 py-2">
                       <div className="w-7">
-                        <FileIcon
-                          extension={c.file.name.split(".").pop()}
-                          {...(defaultStyles[c.file.name.split(".").pop()] ||
-                            defaultStyles.txt)}
-                        />
+                        {c.file?.name && (
+                          <FileIcon
+                            extension={c.file.name.split(".").pop()}
+                            {...(defaultStyles[
+                              c.file.name
+                                .split(".")
+                                .pop() as keyof typeof defaultStyles
+                            ] || defaultStyles.txt)}
+                          />
+                        )}
                       </div>
 
                       <div className="min-w-0 flex-1">
