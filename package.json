@@ -19,6 +19,8 @@
     "framer-motion": "^12.7.3",
     "material-ripple-effects": "^2.0.1",
     "next": "15.3.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-media-recorder": "^1.7.1"

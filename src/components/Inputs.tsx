@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 // import data from "@emoji-mart/data";
 // import Picker from "@emoji-mart/react";
 // import i18n from "@emoji-mart/data/i18n/fa.json";
+import "primeicons/primeicons.css";
+
 import {
   FaceSmileIcon,
   MicrophoneIcon,
@@ -12,6 +14,9 @@ import {
   TrashIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { Button } from "primereact/button";
+import { Dialog } from "primereact/dialog";
+import { FileUpload } from "primereact/fileupload";
 
 function Inputs() {
   const [message, setMessage] = useState("");
@@ -152,15 +157,7 @@ function Inputs() {
             {formatTime(recordingTime)}
           </div>
         ) : (
-          <label className="group cursor-pointer rounded-full p-2 hover:bg-black/20">
-            <PaperClipIcon className="size-6 stroke-1 text-white transition-all ease-in-out group-hover:text-white/90" />
-            <input
-              type="file"
-              accept="*"
-              onChange={(e) => console.log(e.target.files?.[0])}
-              className="hidden"
-            />
-          </label>
+          <FileUploader />
         )}
 
         <input
@@ -185,5 +182,75 @@ function Inputs() {
     </form>
   );
 }
+function FileUploader() {
+  const [visible, setVisible] = useState(false);
+  const chooseOptions = {
+    icon: "pi pi-fw pi-images",
+    className: "custom-choose-btn  p-button-outlined",
+  };
+  const uploadOptions = {
+    icon: "pi pi-fw pi-cloud-upload",
+    className:
+      "custom-upload-btn p-button-success text-white  p-button-outlined",
+  };
+  const cancelOptions = {
+    icon: "pi pi-fw pi-times",
+    className: "custom-cancel-btn p-button-danger  p-button-outlined",
+  };
 
+  return (
+    <div>
+      <button
+        onClick={() => setVisible(true)}
+        className="group cursor-pointer rounded-full p-2 hover:bg-black/20"
+      >
+        <PaperClipIcon className="size-6 stroke-1 text-white transition-all ease-in-out group-hover:text-white/90" />
+      </button>
+      <Dialog
+        header="انتخاب فایل"
+        visible={visible}
+        onHide={() => {
+          if (!visible) return;
+          setVisible(false);
+        }}
+        modal
+        draggable={false}
+        className="bg-white/50 text-black backdrop-blur-sm"
+        headerStyle={{ background: "transparent" }}
+        maskStyle={{ background: "transparent" }}
+        contentStyle={{ background: "transparent" }}
+        // style={{background : "black"}}
+      >
+        <FileUpload
+          name="file"
+          url={"/api/upload"}
+          style={{ background: "transparent" }}
+          maxFileSize={2000000}
+          className="border-none"
+          contentStyle={{ background: "transparent" }}
+          headerStyle={{ background: "#ffffffc2", border: "none" }}
+          emptyTemplate={
+            <div className="m-0 flex flex-col items-center text-black">
+              <i
+                className="pi pi-image mt-3 p-5"
+                style={{
+                  fontSize: "5em",
+                }}
+              ></i>
+              فایل را بکشید یا یک فایل انتخاب کنید.
+            </div>
+          }
+          chooseLabel="انتخاب"
+          chooseOptions={chooseOptions}
+          uploadOptions={uploadOptions}
+          cancelOptions={cancelOptions}
+          uploadLabel="اپلود"
+          cancelLabel="لغو"
+          mode="advanced"
+          selectedFileLabel="جووووون"
+        />
+      </Dialog>
+    </div>
+  );
+}
 export default Inputs;

@@ -19,6 +19,8 @@ export const viewport: Viewport = {
   initialScale: 1.0,
   userScalable: false,
 };
+import { PrimeReactProvider } from "primereact/api";
+
 export default async function RootLayout({
   children,
   params,
@@ -31,9 +33,11 @@ export default async function RootLayout({
       <body
         className={`h-screen w-screen max-w-[1920px] items-center justify-center text-white antialiased md:flex md:py-20`}
       >
-        <main className="z-[10] mx-auto h-full max-h-[1080px] overflow-hidden bg-black/20 backdrop-blur-sm md:container md:rounded-2xl">
-          <Chat>{children}</Chat>
-        </main>
+        <PrimeReactProvider>
+          <main className="z-[10] mx-auto h-full max-h-[1080px] overflow-hidden bg-black/20 backdrop-blur-sm md:container md:rounded-2xl">
+            <Chat>{children}</Chat>
+          </main>
+        </PrimeReactProvider>
       </body>
     </html>
   );
