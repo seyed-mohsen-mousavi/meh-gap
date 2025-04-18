@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import 'primereact/resources/themes/lara-light-blue/theme.css' layer(primereact);
+@import "primereact/resources/themes/lara-light-blue/theme.css"
+  layer(primereact);
 
 html {
   background-image: url("../../public/macOS.avif");
@@ -18,16 +19,28 @@ html {
   @apply flex flex-row-reverse items-start gap-2;
 }
 .chat_con .bubble {
-  @apply mt-5 flex sm:max-w-1/2 items-end gap-3 rounded-xl rounded-bl-xl bg-black/50 px-4 py-2 leading-1.5;
+  @apply mt-5 flex items-end gap-3 rounded-xl rounded-bl-xl bg-black/50 px-4 py-2 leading-1.5 sm:max-w-1/2;
 }
 .chat_con .image {
   @apply size-10 rounded-full;
 }
+.chat_con .file {
+  @apply bg-black/50;
+}
+.sender .file {
+  @apply !bg-white/50;
+}
+.sender .icon {
+  @apply !text-black;
+}
+.chat_con .icon {
+  @apply text-white;
+}
 .bubble span {
-  @apply text-[10px] sm:text-xs font-normal text-gray-500 dark:text-gray-400;
+  @apply text-[10px] font-normal text-gray-500 sm:text-xs dark:text-gray-400;
 }
 .bubble p {
-  @apply py-1 text-sm sm:text-base font-normal text-gray-900 dark:text-white;
+  @apply py-1 text-sm font-normal text-gray-900 sm:text-base dark:text-white;
 }
 .sender {
   @apply flex-row;

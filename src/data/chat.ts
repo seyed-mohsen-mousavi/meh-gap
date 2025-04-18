@@ -103,7 +103,7 @@ export const fullChat: FullChat[] = [
         lastSeen: new Date("2025-04-17T10:15:00Z"),
         unreadCount: 0,
         chatHistory: [
-            { message: "اپل از سیستم عامل جدید رونمایی کرد", image :  "https://static.digiato.com/digiato/2024/06/ios18-910x536.jpg.webp", sender: "tech_news", date: new Date("2025-04-16T14:30:00Z") },
+            { message: "اپل از سیستم عامل جدید رونمایی کرد", image: "https://static.digiato.com/digiato/2024/06/ios18-910x536.jpg.webp", sender: "tech_news", date: new Date("2025-04-16T14:30:00Z") },
             { message: "هوش مصنوعی گوگل قابلیت‌های جدیدی ارائه داد", sender: "tech_news", date: new Date("2025-04-17T09:45:00Z") },
             { message: "آخرین اخبار فناوری: سامسونگ گوشی جدید رونمایی کرد...", sender: "tech_news", date: new Date("2025-04-17T10:15:00Z") },
         ],
@@ -149,6 +149,17 @@ export const fullChat: FullChat[] = [
                 message: "سلام، بله دارم. الآن برات می‌فرستم",
                 sender: "pedram",
                 date: new Date("2025-04-16T21:35:00Z"),
+            },
+            {
+                message: "اینم فایل ",
+                sender: "pedram",
+                date: new Date("2025-04-16T21:35:00Z"),
+                file: {
+                    name: "project.zip",
+                    type: "Zip",
+                    size: 1024,
+                    url: "https://example.com/uploads/report.zip"
+                }
             },
             {
                 message: "فایل‌ها رو برات فرستادم",

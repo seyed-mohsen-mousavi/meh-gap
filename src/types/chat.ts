@@ -25,7 +25,12 @@ export interface FullChat {
         sender: string;
         date: Date;
         image?: string;
-        file?: string;
+        file?: {
+            name: string;
+            type: string;
+            size: number;
+            url: string
+        };
     }[];
     member?: number;
     chatType: "private" | "group" | "channel";
